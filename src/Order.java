@@ -13,7 +13,7 @@ public class Order
     public double CalculateTotal(){
         double total = 0;
         for (IMenuItem item : menuItems) {
-            total += item.getPrice();
+            total += item.getFinalPrice();
         }
         return total;
     }
