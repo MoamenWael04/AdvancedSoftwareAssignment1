@@ -7,7 +7,7 @@ class Steak implements  IMenuItem{
     public Steak(){
         this.name = "Steak";
         this.price = 21.5;
-        this.description = "Steak for non-veges";
+        this.description = "Steak for Non-Vegetarians";
         this.strategy = new MeatDescount();
 
     }

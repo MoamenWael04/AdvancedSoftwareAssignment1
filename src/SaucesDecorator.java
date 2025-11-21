@@ -14,4 +14,8 @@ class SaucesDecorator extends MenuItemDecorator{
     public double getPrice() {
         return menuItem.getPrice() + 1.5;
     }
+    @Override
+    public double getFinalPrice() {
+        return menuItem.getPrice();
+    }
 }

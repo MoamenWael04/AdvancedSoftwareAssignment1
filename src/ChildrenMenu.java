@@ -12,8 +12,8 @@ class ChildrenMenu implements IMenu {
     public void displayMenu() {
         System.out.println("=== Children Menu ===");
         for (IMenuItem item : menuItems) {
-            System.out.println(item.getName() + " - $" + item.getPrice());
-            System.out.println("  " + item.getDescription());
+            System.out.println("-Item: " + item.getName() + " - Price: " + item.getPrice() + "$");
+            System.out.println("  " + item.getDescription() + "\n");
         }
     }
     @Override

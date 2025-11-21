@@ -2,6 +2,6 @@
 class CashPayment implements IPayment{
     @Override
     public void pay(Order order) {
-        System.out.println("the customer paid with cash : " + order.getTotalPrice());
+        System.out.println("The customer paid with Cash: " + order.getTotalPrice() + "$");
     }
 }

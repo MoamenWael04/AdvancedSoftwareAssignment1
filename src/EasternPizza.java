@@ -5,9 +5,9 @@ class EasternPizza implements IMenuItem{
     IDescountStrategy strategy;
 
     public EasternPizza(){
-        this.name = "Eastern pizza";
+        this.name = "Eastern Pizza";
         this.price = 12;
-        this.description = "Easter pizza for non-veges";
+        this.description = "Easter Pizza for Non-Vegetarians!";
         this.strategy = new PizzaDiscount();
     }
     @Override

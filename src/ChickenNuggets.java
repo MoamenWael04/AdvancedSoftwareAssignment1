@@ -5,9 +5,9 @@ class ChickenNuggets implements IMenuItem{
     IDescountStrategy strategy;
 
     public ChickenNuggets(){
-        this.name = "chicken nuggets";
+        this.name = "Chicken Nuggets";
         this.price = 8.4;
-        this.description = "chicken nuggets for children";
+        this.description = "Chicken Nuggets for Children!";
         this.strategy = new MeatDescount();
 
     }

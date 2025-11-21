@@ -15,7 +15,6 @@ public abstract class MenuItemDecorator implements IMenuItem {
     public String getName() {
         return menuItem.getName();
     }
-
 }
 
 

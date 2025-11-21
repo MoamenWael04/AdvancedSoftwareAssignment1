@@ -4,9 +4,9 @@ class ItalianPizza implements IMenuItem {
     String description;
     IDescountStrategy strategy;
     public ItalianPizza(){
-        this.name = "italian pizza";
+        this.name = "Italian Pizza";
         this.price = 10;
-        this.description = "italian pizza for veges";
+        this.description = "Italian Pizza for Vegetarians!";
         this.strategy = new PizzaDiscount();
     }
     @Override

@@ -5,9 +5,9 @@ class CheeseBurger implements IMenuItem{
     IDescountStrategy strategy;
 
     public CheeseBurger(){
-        this.name = "cheese burger";
+        this.name = "Cheese Burger";
         this.price = 11.5;
-        this.description = "cheese burger for children";
+        this.description = "Cheese Burger for Children!";
         this.strategy = new MeatDescount();
 
     }

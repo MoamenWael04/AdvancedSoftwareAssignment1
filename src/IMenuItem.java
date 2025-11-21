@@ -3,7 +3,6 @@ public interface IMenuItem {
     double getPrice();
     String getDescription();
     double getFinalPrice(); // for discount
-
 }
 
 

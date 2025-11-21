@@ -5,9 +5,9 @@ class CezarSalad implements IMenuItem{
     IDescountStrategy strategy;
 
     public CezarSalad(){
-        this.name = "cezar salad";
+        this.name = "Cezar Salad";
         this.price = 5.7;
-        this.description = "cezar salad for veges";
+        this.description = "Cezar Salad for Vegetarians!";
         this.strategy = new SaladDescount();
 
     }

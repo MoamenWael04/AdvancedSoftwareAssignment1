@@ -10,10 +10,10 @@ class NonVegetarianMenu implements IMenu {
     }
     @Override
     public void displayMenu() {
-        System.out.println("=== non-Vegertarian Menu ===");
+        System.out.println("=== Non-Vegetarians Menu ===");
         for (IMenuItem item : menuItems) {
-            System.out.println(item.getName() + " - $" + item.getPrice());
-            System.out.println("  " + item.getDescription());
+            System.out.println("-Item: " + item.getName() + " - Price: " + item.getPrice() + "$");
+            System.out.println("  " + item.getDescription() + "\n");
         }
     }
     @Override

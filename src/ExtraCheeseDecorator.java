@@ -14,4 +14,9 @@ class ExtraCheeseDecorator extends MenuItemDecorator{
     public double getPrice() {
         return menuItem.getPrice() + 2.7;
     }
+
+    @Override
+    public double getFinalPrice() {
+        return menuItem.getPrice();
+    }
 }
