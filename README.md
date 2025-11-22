@@ -1,5 +1,5 @@
 # 🚗 Restaurant Ordering & Billing System –  Readme
-====================================================================
+---
 
 ## 📌 Overview
 Design and implement a modular and extensible Restaurant Ordering & Billing System that enables customers to browse menus, customize meals, place orders, process payments, and generate bills.
@@ -172,8 +172,8 @@ TOTAL: 70.075
 Thank you for your visit. We hope to see you again!
 ```
 ## 🧑‍💻 **Developed For**
-Advanced Software Engineering 2025
-Faculty of Computers and Artificial Intelligence
+Advanced Software Engineering 2025 - 
+Faculty of Computers and Artificial Intelligence - 
 Cairo University
 
 ---
