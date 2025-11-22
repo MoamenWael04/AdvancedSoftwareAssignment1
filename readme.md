@@ -1,177 +1,180 @@
-# Restaurant Ordering System – README
+# 🚗 Restaurant Ordering & Billing System –  Readme
+---
 
 ## 📌 Overview
-This project is a modular restaurant ordering system designed using several OOP design patterns, including:
-- **Strategy Pattern** (dynamic discounts)
-- **Decorator Pattern** (extras/customizations)
-- **Factory Pattern** (menu and item creation)
-- **Facade Pattern** (ordering workflow)
-- **Observer Pattern** (notifying kitchen & waiter)
-
-The system allows customers to:
-- Select menu type
-- Choose items
-- Add extras
-- Apply different discount strategies
-- Pay using different payment methods
-- Generate a bill
+Design and implement a modular and extensible Restaurant Ordering & Billing System that enables customers to browse menus, customize meals, place orders, process payments, and generate bills.
+The system must adhere to SOLID design principles and apply all the required object-oriented design patterns. 
+The goal is to demonstrate clean architecture,flexibility for future extensions, and maintainability through proper design abstraction.
+The system should simulate the complete workflow of a restaurant, from ordering to billing. The following sections describe the required components
 
 ---
 
-## 🚀 How to Run the Project
-### **1. Requirements**
-- Java JDK 8 or higher
-- Any IDE (IntelliJ, Eclipse, VS Code) or CLI
+## 🧰 Sample Example
+```text
+Welcome to Our Restaurant!
+==========================
 
-### **2. Compile the Code**
-If using command line:
-```sh
-javac *.java
-```
+=== Choose Menu Type ===
+1. Vegetarian Menu
+2. Non-Vegetarian Menu
+3. Children Menu
+4. Finish Order & Pay
+Enter choice (1-4): 1
 
-### **3. Run the System**
-```sh
-java Main
-```
-(Assuming you have a `Main` class that creates and runs the `RestaurantFacade`)
+=== Vegetarians Menu ===
+-Item: Italian Pizza - Price: 10.0$
+  Italian Pizza for Vegetarians!
 
-Example:
-```java
-public class Main {
-    public static void main(String[] args) {
-        RestaurantFacade facade = new RestaurantFacade();
-        facade.makeOrder();
-    }
-}
+-Item: Cezar Salad - Price: 5.7$
+  Cezar Salad for Vegetarians!
+
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Italian Pizza
+Add extras? (y/n)
+y
+Extras: cheese (2.7$), sauces (1.5$), toppings (1.9$)
+Enter extras separated by comma (or 'none'): cheese
+
+Italian Pizza with extra cheese added to your order!
+
+Add another item from this menu? (y/n): n
+
+=== Choose Menu Type ===
+1. Vegetarian Menu
+2. Non-Vegetarian Menu
+3. Children Menu
+4. Finish Order & Pay
+Enter choice (1-4): 1
+
+=== Vegetarians Menu ===
+-Item: Italian Pizza - Price: 10.0$
+  Italian Pizza for Vegetarians!
+
+-Item: Cezar Salad - Price: 5.7$
+  Cezar Salad for Vegetarians!
+
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Cezar Salad
+Add extras? (y/n)
+n
+
+Cezar Salad added to your order!
+
+Add another item from this menu? (y/n): n
+
+=== Choose Menu Type ===
+1. Vegetarian Menu
+2. Non-Vegetarian Menu
+3. Children Menu
+4. Finish Order & Pay
+Enter choice (1-4): 2
+
+=== Non-Vegetarians Menu ===
+-Item: Eastern Pizza - Price: 12.0$
+  Easter Pizza for Non-Vegetarians!
+
+-Item: Steak - Price: 21.5$
+  Steak for Non-Vegetarians
+
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Eastern Pizza
+Add extras? (y/n)
+y
+Extras: cheese (2.7$), sauces (1.5$), toppings (1.9$)
+Enter extras separated by comma (or 'none'): sauces
+
+Eastern Pizza with sauces added to your order!
+
+Add another item from this menu? (y/n): y
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Steak
+Add extras? (y/n)
+y
+Extras: cheese (2.7$), sauces (1.5$), toppings (1.9$)
+Enter extras separated by comma (or 'none'): toppings
+
+Steak with toppings added to your order!
+
+Add another item from this menu? (y/n): n
+
+=== Choose Menu Type ===
+1. Vegetarian Menu
+2. Non-Vegetarian Menu
+3. Children Menu
+4. Finish Order & Pay
+Enter choice (1-4): 3
+
+=== Children Menu ===
+-Item: Chicken Nuggets - Price: 8.4$
+  Chicken Nuggets for Children!
+
+-Item: Cheese Burger - Price: 11.5$
+  Cheese Burger for Children!
+
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Chicken Nuggets
+Add extras? (y/n)
+n
+
+Chicken Nuggets added to your order!
+
+Add another item from this menu? (y/n): y
+Enter item name exactly as shown (type 'back' to return, 'done' to finish): Cheese Burger
+Add extras? (y/n)
+n
+
+Cheese Burger added to your order!
+
+Add another item from this menu? (y/n): n
+
+=== Choose Menu Type ===
+1. Vegetarian Menu
+2. Non-Vegetarian Menu
+3. Children Menu
+4. Finish Order & Pay
+Enter choice (1-4): 4
+
+Choose payment method:
+1. Cash
+2. Credit Card
+3. Mobile Wallet
+1
+You selected Cash payment!
+
+*** Kitchen received New Order(s) ***
+-----------------------------------
+ + Italian Pizza with extra cheese
+ + Cezar Salad
+ + Eastern Pizza with sauces
+ + Steak with toppings
+ + Chicken Nuggets
+ + Cheese Burger
+
+*** Waiter received New Order(s) ***
+------------------------------------
+ + Italian Pizza with extra cheese
+ + Cezar Salad
+ + Eastern Pizza with sauces
+ + Steak with toppings
+ + Chicken Nuggets
+ + Cheese Burger
+Waiter is going to receive 70.075$  (after discount) for the Order!
+
+Order Completed Successfully!
+The customer paid with Cash: 70.075$
+
+========== FINAL BILL ==========
+Item: Italian Pizza with extra cheese - Price (after discount): 11.7
+Item: Cezar Salad - Price (after discount): 4.845
+Item: Eastern Pizza with sauces - Price (after discount): 12.3
+Item: Steak with toppings - Price (after discount): 22.325
+Item: Chicken Nuggets - Price (after discount): 7.9799999999999995
+Item: Cheese Burger - Price (after discount): 10.924999999999999
+--------------------------------
+TOTAL: 70.075
+================================
+
+Thank you for your visit. We hope to see you again!
 ```
+## 🧑‍💻 **Developed For**
+Advanced Software Engineering 2025 - 
+Faculty of Computers and Artificial Intelligence - 
+Cairo University
 
 ---
-
-## 📦 Project Structure
-```
-/Strategy        → Discount behavior logic
-/Decorator       → Extras such as cheese, sauces, toppings
-/Factory         → Menu & item creation
-/Observer        → Manager, Kitchen, Waiter
-/Facade          → RestaurantFacade (main workflow)
-/MenuItems       → ItalianPizza, CezarSalad, ChildrenMeal...
-```
-
----
-
-## 🧠 How Discounts Work (Strategy Pattern)
-Each item contains a `Discount` context:
-```java
-Discount discount = new Discount(new SaladDiscount());
-```
-You can dynamically change the discount later:
-```java
-item.setDiscountStrategy(new BlackFridayDiscount());
-```
-
-### **Available Example Discount Strategies**
-| Strategy | Description |
-|----------|-------------|
-| `SaladDiscount` | 15% off for salads |
-| `NoDiscount` | No discount |
-| `HolidayDiscount` | Special seasonal discount |
-| `BlackFridayDiscount` | Large discount for offers day |
-
----
-
-## 🍕 How Extras Work (Decorator Pattern)
-Extras wrap the item dynamically:
-```java
-item = new ExtraCheeseDecorator(item);
-item = new SaucesDecorator(item);
-```
-Each decorator increases:
-- Final price
-- Description
-
----
-
-## 📋 Example Test Cases
-
-### **Test Case 1 — Simple Order Without Extras**
-```
-Menu: Vegetarian
-Item: Cezar Salad (5.7$)
-Discount: SaladDiscount → final price = 4.845$
-```
-
-### **Test Case 2 — Pizza with Cheese and Toppings**
-```
-Menu: Vegetarian
-Item: Italian Pizza → base price e.g. 12.0$
-Extras: Cheese (+2.7), Toppings (+1.9)
-Final price = 16.6$
-```
-
-### **Test Case 3 — Applying Different Discounts**
-```java
-IMenuItem item = new CezarSalad();
-item.setDiscountStrategy(new NoDiscount());
-```
-Expected final price:
-```
-5.7$
-```
-
-Then:
-```java
-item.setDiscountStrategy(new HolidayDiscount());
-```
-Expected final price (example):
-```
-5.13$  (10% discount)
-```
-
----
-
-## 🧪 Discount Scenarios to Try
-You can test these by changing the strategy at runtime:
-
-### ✔ Scenario A: No Discount
-```
-setDiscountStrategy(new NoDiscount())
-```
-
-### ✔ Scenario B: Black Friday Discount
-```
-setDiscountStrategy(new BlackFridayDiscount())
-```
-
-### ✔ Scenario C: Seasonal Holiday Discount
-```
-setDiscountStrategy(new HolidayDiscount())
-```
-
-### ✔ Scenario D: Custom Discount (User-Defined)
-You can easily create a new strategy:
-```java
-public class CustomDiscount implements IDiscountStrategy {
-    public double applyDiscount(double price) {
-        return price * 0.70; // 30% off
-    }
-}
-```
-
----
-
-## 🎉 Final Notes
-This architecture is built for scalability:
-- Add new menus with zero changes to the Facade
-- Add new discounts without touching item classes
-- Add new extras via new Decorators
-- Add new observers (Delivery, Notification System...)
-
-The project follows Clean OOP, SOLID, and well-known design patterns.
-
----
-
-If you want, I can also generate:
-✔ A UML Class Diagram
-✔ A Sequence Diagram for makeOrder()
-✔ A PDF version of all documentation
-
+## 📅 **Last Updated: November 22, 2025**
