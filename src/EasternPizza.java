@@ -1,29 +1,23 @@
-class EasternPizza implements IMenuItem{
-    String name;
-    double price;
-    String description;
-    IDescountStrategy strategy;
+// EasternPizza.java
+public class EasternPizza implements IMenuItem {
+    private String name;
+    private double price;
+    private String description;
+    private Discount discount;
 
-    public EasternPizza(){
+    public EasternPizza() {
         this.name = "Eastern Pizza";
-        this.price = 12;
+        this.price = 12.0;
         this.description = "Easter Pizza for Non-Vegetarians!";
-        this.strategy = new PizzaDiscount();
+        this.discount = new Discount(new PizzaDiscount());
     }
-    @Override
-    public String getName() {
-        return name;
+
+    public void setDiscountStrategy(IDiscountStrategy strategy) {
+        this.discount.setStrategy(strategy);
     }
-    @Override
-    public double getPrice() {
-        return price;
-    }
-    @Override
-    public String getDescription() {
-        return description;
-    }
-    @Override
-    public double getFinalPrice() {
-        return strategy.applyDiscount(price);
-    }
+
+    @Override public String getName() { return name; }
+    @Override public double getPrice() { return price; }
+    @Override public String getDescription() { return description; }
+    @Override public double getFinalPrice() { return discount.apply(price); }
 }

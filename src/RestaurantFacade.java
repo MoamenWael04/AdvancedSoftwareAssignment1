@@ -93,7 +93,10 @@ public class RestaurantFacade {
         manager.addOrder(order);
 
         order.processPayment();
-        order.printBill();
+
+        BillPrinter printer = new BillPrinter();
+        printer.print(order);
+
 
         System.out.println("\nThank you for your visit. We hope to see you again!");
     }

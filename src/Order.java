@@ -34,14 +34,4 @@ public class Order {
             payment.pay(this);
         }
     }
-
-    public void printBill() {
-        System.out.println("\n========== FINAL BILL ==========");
-        for (IMenuItem item : selectedItems) {
-            System.out.println("Item: " + item.getName() + " - Price (after discount): " + item.getFinalPrice());
-        }
-        System.out.println("--------------------------------");
-        System.out.println("TOTAL: " + getTotalPrice());
-        System.out.println("================================");
-    }
 }

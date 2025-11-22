@@ -11,7 +11,7 @@ class VegetarianMenu implements IMenu {
     }
     @Override
     public void displayMenu() {
-        System.out.println("=== Vegetarians Menu ===");
+        System.out.println("\n=== Vegetarians Menu ===");
         for (IMenuItem item : menuItems) {
             System.out.println("-Item: " + item.getName() + " - Price: " + item.getPrice() + "$");
             System.out.println("  " + item.getDescription() + "\n");

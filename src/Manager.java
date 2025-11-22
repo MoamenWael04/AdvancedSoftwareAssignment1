@@ -21,7 +21,7 @@ class Manager implements ISubject{
     public void addOrder(Order order){
         orders.add(order);
         notifyObservers();
-        System.out.println("\nOrder Added Successfully!");
+        System.out.println("\nOrder Completed Successfully!");
     }
 }
 
